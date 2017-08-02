@@ -1,18 +1,19 @@
 - breadcrumb :rubric, @rubric
 
 .form-horizontal
-  %h1 New Rubric
+  %h1
+    = t('views.rubrics.new.title')
   = form_for(@rubric) do |f|
     = f.hidden_field :rubric_id
     .form-group
       .col-xs-2.col-sm-1.col-md-1.control-label
-        = f.label :title
+        = f.label t('views.rubrics.new.name')
       .col-xs-8.col-sm-6.col-md-4
         = f.text_field :title, class: 'form-control', autofocus: true
     .form-group
       .col-xs-2.col-sm-1.col-md-1.control-label
-        = f.label :content
+        = f.label t('views.rubrics.new.content')
       .col-xs-8.col-sm-6.col-md-4
         = f.text_area :content, rows: 5, class: 'form-control'
     .actions
-      = f.submit @rubric.new_record? ? 'Create' : 'Save', class: 'btn btn-primary'
+      = f.submit @rubric.new_record? ? t('views.buttons.create') : t('views.buttons.save'), class: 'btn btn-primary'

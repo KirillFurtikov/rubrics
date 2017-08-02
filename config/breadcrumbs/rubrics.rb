@@ -1,13 +1,13 @@
 crumb :root do
-  link "home", root_path
+  link t('main'), root_path
 end
 
 crumb :rubrics do
-  link "rubrics", rubrics_path
+  link Rubric.model_name.human, rubrics_path
 end
 
 crumb :rubric do |rubric|
-  link rubric.title || %Q(new #{rubric.model_name.human}).capitalize, rubrics_path(rubric_id: rubric)
+  link rubric.title || %Q(новая #{rubric.model_name.human}).capitalize, rubrics_path(rubric_id: rubric)
   if rubric.rubric
     parent :rubric, rubric.rubric
   else

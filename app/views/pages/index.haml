@@ -1,8 +1,10 @@
 .jumbotron
-  %h2.display-3 Рубрикатор
+  %h2.display-3
+    = t('main_page.header')
   %p.lead
   %hr.my-4
-  %p Описание
+  %p
+    = t('main_page.abouts')
   %p.lead
-    = link_to 'Rubrics', rubrics_path, class: 'btn btn-primary'
-    = link_to 'Clients', clients_path, class: 'btn btn-primary'
+    = link_to t('attributes.rubrics.title.many'), rubrics_path, class: 'btn btn-primary'
+    = link_to t('attributes.clients.name.many'), clients_path, class: 'btn btn-primary'

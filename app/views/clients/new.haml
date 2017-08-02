@@ -1,12 +1,13 @@
 - breadcrumb :client, @client
 
 .form-horizontal
-  %h1 New Client
+  %h1
+    = t('views.clients.new.title')
   = form_for(@client) do |f|
     .form-group
       .col-xs-2.col-sm-1.col-md-1.control-label
-        = f.label :name
+        = f.label t('views.clients.new.name')
       .col-xs-8.col-sm-6.col-md-4
         = f.text_field :name, class: 'form-control', autofocus: true
     .actions
-      = f.submit @client.new_record? ? 'Create' : 'Save', class: 'btn btn-primary'
+      = f.submit @client.new_record? ? t('views.buttons.create') : t('views.buttons.save'), class: 'btn btn-primary'

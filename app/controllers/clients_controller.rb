@@ -11,7 +11,8 @@ class ClientsController < ApplicationController
   def create
     @client = Client.new(client_params)
     if @client.save
-      redirect_to @client, notice: 'Record was successfully created.'
+      flash[:created] = t('messages.clients.successful.created')
+      redirect_to @client
     else
       render :new
     end
@@ -19,7 +20,8 @@ class ClientsController < ApplicationController
 
   def update
     if @client.update(client_params)
-      redirect_to @client, notice: 'Record was successfully updated.'
+      flash[:updated] = t('messages.clients.successful.updated')
+      redirect_to @client
     else
       render :edit
     end
@@ -27,7 +29,8 @@ class ClientsController < ApplicationController
 
   def destroy
     @client.destroy
-    redirect_to clients_path, notice: 'Record was successfully destroyed.'
+    flash[:destroyed] = t('messages.clients.successful.destroyed')
+    redirect_to clients_path
   end
 
   private

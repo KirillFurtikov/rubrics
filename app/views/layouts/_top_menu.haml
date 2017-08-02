@@ -2,12 +2,12 @@
   .container
     .navbar-header
       %button.navbar-toggle.collapsed{'aria-controls' => 'navbar', 'aria-expanded' => 'false', 'data-target' => '#navbar', 'data-toggle' => 'collapse', type: 'button'}
-        %span.sr-only Toggle navigation
+        %span.sr-only
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
     #navbar.collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li{class: params[:controller] == 'pages' ? 'active' : ''}= link_to 'Home', root_path
-        %li{class: params[:controller] == 'rubrics' ? 'active' : ''}= link_to 'Rubrics', rubrics_path
-        %li{class: params[:controller] == 'clients' ? 'active' : ''}= link_to 'Clients', clients_path
+        %li{class: params[:controller] == 'pages' ? 'active' : ''}= link_to t('main'), root_path
+        %li{class: params[:controller] == 'rubrics' ? 'active' : ''}= link_to Rubric.model_name.human, rubrics_path
+        %li{class: params[:controller] == 'clients' ? 'active' : ''}= link_to Client.model_name.human, clients_path

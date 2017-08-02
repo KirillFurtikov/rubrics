@@ -13,7 +13,8 @@ class RequestsController < ApplicationController
     @request = @client.requests.new(request_params)
 
     if @request.save
-      redirect_to client_requests_path(@client), notice: 'Record was successfully created.'
+      flash[:created] = t('messages.requests.successful.created')
+      redirect_to client_requests_path(@client)
     else
       render :new
     end
@@ -21,7 +22,8 @@ class RequestsController < ApplicationController
 
   def update
     if @request.update(request_params)
-      redirect_to client_requests_path(@client), notice: 'Record was successfully updated.'
+      flash[:updated] = t('messages.requests.successful.updated')
+      redirect_to client_requests_path(@client)
     else
       render :edit
     end
@@ -29,7 +31,8 @@ class RequestsController < ApplicationController
 
   def destroy
     @request.destroy
-    redirect_to client_requests_path(@client), notice: 'Record was successfully destroyed.'
+    flash[:destroyed] = t('messages.requests.successful.destroyed')
+    redirect_to client_requests_path(@client)
   end
 
   private

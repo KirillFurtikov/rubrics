@@ -2,21 +2,23 @@
 
 = paginate @clients, views_prefix: 'pagination'
 
-%h1 Clients
+%h1
+  = t('views.clients.index.title')
 
 %table.table.table-striped
   %thead
     %tr
-      %th Title
+      %th
+        = t('views.clients.index.name')
       %th.text-right
-        = link_to '', new_client_path, class: 'btn btn-success btn-sm glyphicon glyphicon-file', title: 'Create new client'
+        = link_to '', new_client_path, class: 'btn btn-success btn-sm glyphicon glyphicon-file', title: t('views.clients.index.buttons.new')
   %tbody
     - @clients.each do |client|
       %tr
         %td= link_to client.name, client_path(client.id)
         %td.text-right
-          = link_to '', client_requests_path(client.id), class: 'btn btn-info btn-sm glyphicon glyphicon-list-alt', title: 'Requests'
-          = link_to '', edit_client_path(client), class: 'btn btn-primary btn-sm glyphicon glyphicon-pencil', title: 'Edit'
-          = link_to '', client, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm glyphicon glyphicon-trash', title: 'Delete'
+          = link_to '', client_requests_path(client.id), class: 'btn btn-info btn-sm glyphicon glyphicon-list-alt', title: t('views.clients.index.buttons.requests')
+          = link_to '', edit_client_path(client), class: 'btn btn-primary btn-sm glyphicon glyphicon-pencil', title: t('views.clients.index.buttons.edit')
+          = link_to '', client, method: :delete, data: {confirm: t('views.clients.index.confirmation')}, class: 'btn btn-danger btn-sm glyphicon glyphicon-trash', title: t('views.clients.index.buttons.destroy')
 
 = paginate @clients, views_prefix: 'pagination'

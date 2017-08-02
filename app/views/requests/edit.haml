@@ -1,17 +1,18 @@
 - breadcrumb :request, [@client, @request]
 
 .form-horizontal
-  %h1 Editing Request
+  %h1
+    = t('views.requests.edit.title')
   = form_for [@client, @request] do |f|
     .form-group
       .col-xs-2.col-sm-1.col-md-1.control-label
-        = f.label :title
+        = f.label t('views.requests.edit.name')
       .col-xs-8.col-sm-6.col-md-4
         = f.text_field :title, class: 'form-control', autofocus: true
     .form-group
       .col-xs-2.col-sm-1.col-md-1.control-label
-        = f.label :body
+        = f.label t('views.requests.edit.body')
       .col-xs-8.col-sm-6.col-md-4
         = f.text_area :body, rows: 5, class: 'form-control'
     .actions
-      = f.submit @request.new_record? ? 'Create' : 'Save', class: 'btn btn-primary'
+      = f.submit @request.new_record? ? t('views.buttons.create') : t('views.buttons.save'), class: 'btn btn-primary'

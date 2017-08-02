@@ -1,14 +1,9 @@
 - breadcrumb :client, @client
-%strong Client:
+%strong
+  = t('views.clients.show.name')
 = @client.name
 %br
 %br
-%br
 
-= link_to 'New Request', new_client_request_path(@client), class: 'btn btn-warning'
-%br
-%br
-= link_to 'Edit client', edit_client_path(@client),  class: 'btn btn-danger'
-%br
-%br
-= link_to 'Main page', clients_path, class: 'btn btn-primary'
+= link_to t('views.clients.show.buttons.new_request'), new_client_request_path(@client), class: 'btn btn-default'
+= link_to t('views.clients.show.buttons.edit_client'), edit_client_path(@client),  class: 'btn btn-primary glyphicon glyphicon-pencil', title: t('views.clients.index.buttons.edit')

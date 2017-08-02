@@ -4,23 +4,24 @@
   - breadcrumb :rubrics
 
 = paginate @rubrics, views_prefix: 'pagination'
-%h2 Rubrics
+%h2
+  = t('views.rubrics.index.title')
 
 %table.table.table-striped
   %thead
     %tr
-      %th Title
-      %th Content
+      %th= t('views.rubrics.index.name')
+      %th= t('views.rubrics.index.content')
       %th.text-right
-        = link_to '', new_rubric_path(rubric_id: @rubric&.id), class: 'btn btn-success btn-sm glyphicon glyphicon-file', title: 'Create new rubric'
+        = link_to '', new_rubric_path(rubric_id: @rubric&.id), class: 'btn btn-success btn-sm glyphicon glyphicon-file', title: t('views.rubrics.index.buttons.new')
   %tbody
     - @rubrics.each do |rubric|
       %tr
-        %td= link_to rubric.title, rubrics_path(rubric_id: rubric.id), title: 'Open view page'
+        %td= link_to rubric.title, rubrics_path(rubric_id: rubric.id)
         %td= rubric.content.truncate(75, separator: /\s/)
         %td.text-right
-          = link_to '', rubric_path(rubric), class: 'btn btn-info btn-sm glyphicon glyphicon-list-alt', title: 'Show'
-          = link_to '', edit_rubric_path(rubric), class: 'btn btn-primary btn-sm glyphicon glyphicon-pencil', title: 'Edit'
-          = link_to '', rubric, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm glyphicon glyphicon-trash', title: 'Delete'
+          = link_to '', rubric_path(rubric), class: 'btn btn-info btn-sm glyphicon glyphicon-list-alt', title: t('views.rubrics.index.buttons.show')
+          = link_to '', edit_rubric_path(rubric), class: 'btn btn-primary btn-sm glyphicon glyphicon-pencil', title: t('views.rubrics.index.buttons.edit')
+          = link_to '', rubric, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm glyphicon glyphicon-trash', title: t('views.rubrics.index.buttons.destroy')
 
 = paginate @rubrics, views_prefix: 'pagination'

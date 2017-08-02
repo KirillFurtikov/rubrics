@@ -16,7 +16,8 @@ class RubricsController < ApplicationController
   def create
     @rubric = Rubric.new(rubric_params)
     if @rubric.save
-      redirect_to @rubric, notice: 'Record was successfully created.'
+      flash[:created] = t('messages.rubrics.successful.created')
+      redirect_to @rubric
     else
       render :new
     end
@@ -24,7 +25,8 @@ class RubricsController < ApplicationController
 
   def update
     if @rubric.update(rubric_params)
-      redirect_to @rubric, notice: 'Record was successfully updated.'
+      flash[:updated] = t('messages.rubrics.successful.updated')
+      redirect_to @rubric
     else
       render :edit
     end
@@ -32,7 +34,8 @@ class RubricsController < ApplicationController
 
   def destroy
     @rubric.destroy
-    redirect_to rubrics_path, notice: 'Record was successfully destroyed.'
+    flash[:destroyed] = t('messages.rubrics.successful.destroyed')
+    redirect_to rubrics_path
   end
 
   private

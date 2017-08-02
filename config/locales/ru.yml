@@ -1,0 +1,126 @@
+ru:
+  activerecord:
+    models:
+      client:
+        one: 'Клиент'
+        other: 'Клиенты'
+      request:
+        one: 'Запрос'
+        other: 'Запросы'
+      rubric:
+        one:  'Рубрика'
+        other: 'Рубрики'
+    attributes:
+      client:
+        name: 'Название'
+      request:
+        title: 'Заголвок'
+        body: 'Содержимое'
+      rubric:
+        title: 'Название'
+  views:
+    pagination:
+      first: '&laquo;'
+      last: '&raquo;'
+      previous: '&lsaquo;'
+      next: '&rsaquo;'
+    buttons:
+      create: 'Создать'
+      save: 'Сохранить'
+    clients:
+      edit:
+        title: 'Редактирование клиента'
+        name: 'Название'
+      new:
+        title: 'Создание клиента'
+        name: 'Название'
+      show:
+        title: 'Просмотр клиента'
+        name: 'Название'
+        buttons:
+          new_request: 'Новый запрос'
+          edit_client: ''
+      index:
+        title: 'Клиенты'
+        name: 'Название'
+        confirmation: 'Вы действительно хотите удалить клиента?'
+        buttons:
+          requests: 'Запросы клиента'
+          edit: 'Редактировать'
+          destroy: 'Удалить'
+          new: 'Создать нового клиента'
+    requests:
+      edit:
+        title: 'Редактирование запроса'
+        name: 'Название'
+        body: 'Содержимое'
+      new:
+        title: 'Создание запроса'
+        name: 'Название'
+        body: 'Содержимое'
+      show:
+        title: 'Просмотр запроса'
+        name: 'Название'
+        body: 'Содержимое'
+        buttons:
+          back: 'Назад к клиенту'
+          destroy: 'Удалить'
+      index:
+        title: 'Запросы'
+        name: 'Название'
+        buttons:
+          show: 'Просмотр запроса'
+          edit: 'Редактировать'
+          destroy: 'Удалить'
+          new: 'Создать новый запрос'
+    rubrics:
+      edit:
+        title: 'Редактирование рубрики'
+        name: 'Название'
+        content: 'Содержимое'
+      new:
+        title: 'Создание рубрики'
+        name: 'Название'
+        content: 'Содержимое'
+      show:
+        name: 'Название'
+        content: 'Содержимое'
+        buttons:
+          new_rubric: 'Создать рубрику'
+          new_subrubric: 'Создать подрубрику'
+      index:
+        title: 'Рубрики'
+        name: 'Название'
+        content: 'Описание'
+        buttons:
+          show: 'Просмотр рубрики'
+          edit: 'Редактировать'
+          destroy: 'Удалить'
+          new: 'Создать новую рубрику'
+  main: 'Главная'
+  messages:
+    clients:
+      success:
+        created: 'Клиент успешно создан.'
+        updated: 'Параметры клиента обновлены.'
+        destroyed: 'Клиент удален!'
+    rubrics:
+      success:
+        created: 'Рубрика успешно создана.'
+        updated: 'Параметры рубрики обновлены.'
+        destroyed: 'Рубрика удалена!'
+    requests:
+      success:
+        created: 'Запрос успешно создан.'
+        updated: 'Параметры запроса обновлены.'
+        destroyed: 'Запрос удален!'
+  breadcrumbs:
+    clients:
+      new: 'Новый клиент'
+    rubrics:
+      new: 'Новая рубрика'
+    requests:
+      new: 'Новый запрос'
+  main_page:
+    header: 'Рубрикатор'
+    abouts: 'Описание'

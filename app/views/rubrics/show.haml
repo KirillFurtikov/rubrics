@@ -1,20 +1,20 @@
 - breadcrumb :rubric, @rubric
 
 %h3
-  Title:
+  = t('views.rubrics.show.name')
   %small
     = @rubric.title
 %h3
-  Content:
+  = t('views.rubrics.show.content')
   %small
     = @rubric.content
 .btn-group
-  = link_to 'New Subrubric', new_rubric_path(rubric_id: @rubric&.id), class: 'btn btn-default'
+  = link_to t('views.rubrics.show.buttons.new_subrubric'), new_rubric_path(rubric_id: @rubric&.id), class: 'btn btn-default'
   %button.btn.btn-default.dropdown-toggle{'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false'}
     %span.caret
     %span.sr-only Toggle dropdown
   %ul.dropdown-menu
     %li
-      = link_to 'New Subrubric', new_rubric_path(rubric_id: @rubric&.id)
-      = link_to 'New Rubric', new_rubric_path
+      = link_to t('views.rubrics.show.buttons.new_subrubric'), new_rubric_path(rubric_id: @rubric&.id)
+      = link_to t('views.rubrics.show.buttons.new_rubric'), new_rubric_path
 = link_to '', edit_rubric_path(@rubric),  class: 'btn btn-primary glyphicon glyphicon-pencil', title: 'Edit'

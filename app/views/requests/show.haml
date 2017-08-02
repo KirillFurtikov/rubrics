@@ -1,22 +1,17 @@
 - breadcrumb :request, [@client, @request]
 %p
-  %strong Request:
-  %br/
-
-  title
-  %br/
+  %strong
+    = t('views.requests.show.title')
+  %br
+    = t('views.requests.show.name')
+  %br
   = @request.title
-  %br/
-  %br/
-  body
-  %br/
+  %br
+  %br
+    = t('views.requests.show.body')
+  %br
   = @request.body
+  %br
+  = link_to t('views.requests.show.buttons.back'), @client, class: 'btn btn-warning'
+  = link_to t('views.requests.show.buttons.destroy'), [@client, @request], method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger'
 
-  %br/
-  %br/
-  %td= link_to 'Destroy', [@client, @request], method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger'
-  %br/
-
-  %br/
-  = link_to 'Back to client', @client, class: 'btn btn-warning'
-  = link_to 'Main page', clients_path, class: 'btn btn-primary'
